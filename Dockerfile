@@ -13,11 +13,13 @@ RUN \
 
 ADD  ["go1.9.3.linux-amd64.tar.gz","/opt/"]
 COPY ["instantclient-basic-linux.x64-12.2.0.1.0.zip","/opt/oracle/"]
+COPY ["instantclient-sdk-linux.x64-12.2.0.1.0.zip","/opt/oracle/"]
 COPY ["instantclient-sqlplus-linux.x64-12.2.0.1.0.zip","/opt/oracle/"]
 
 RUN \
     cd /opt/oracle && \
     unzip instantclient-basic-linux.x64-12.2.0.1.0.zip && \
+    unzip instantclient-sdk-linux.x64-12.2.0.1.0.zip && \
     unzip instantclient-sqlplus-linux.x64-12.2.0.1.0.zip && \
     rm -rf *.zip /opt/go.tar.gz && cd /opt/oracle/instantclient_12_2 && \
     ln -s libclntsh.so.12.1 libclntsh.so && ln -s libocci.so.12.1 libocci.so && \
