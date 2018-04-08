@@ -1,0 +1,17 @@
+prefix=D:/instantclient_12_2
+exec_prefix=${prefix}
+includedir=${prefix}/sdk/include
+
+#libdir=${exec_prefix}
+libdir=${exec_prefix}/sdk/lib/msvc
+
+
+glib_genmarshal=glib-genmarshal
+gobject_query=gobject-query
+glib_mkenums=glib-mkenums
+
+Name: oci8
+Description: oci8 library
+Libs: -L${libdir} -loci
+Cflags: -I${includedir}
+Version: 12.2

@@ -1,0 +1,14 @@
+prefix=/home/jhf/instantclient
+exec_prefix=${prefix}
+libdir=${prefix}/sdb/lib
+includedir=${prefix}/sdk/include
+
+glib_genmarshal=glib-genmarshal
+gobject_query=gobject-query
+glib_mkenums=glib-mkenums
+
+Name: oci8
+Description: oci8 library
+Libs: -L${libdir} -lclntsh
+Cflags: -I${includedir}
+Version: 12.2
