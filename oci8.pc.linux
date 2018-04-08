@@ -1,6 +1,6 @@
-prefix=/home/jhf/instantclient
+prefix=/opt/oracle/instantclient_12_2
 exec_prefix=${prefix}
-libdir=${prefix}/sdb/lib
+libdir=${prefix}
 includedir=${prefix}/sdk/include
 
 glib_genmarshal=glib-genmarshal
