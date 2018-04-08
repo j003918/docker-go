@@ -1,7 +1,7 @@
 FROM docker.io/centos:latest
 RUN \
     yum -y update && \
-    yum -y install bash libaio* curl unzip openssl openssh-server gcc make && \
+    yum -y install bash libaio* curl unzip openssl openssh-server git gcc make && \
     yum clean all && \
     rm -rf /var/cache/yum && \
     ssh-keygen -t rsa -b 2048 -f /etc/ssh/ssh_host_rsa_key     -N '' && \
