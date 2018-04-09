@@ -14,7 +14,7 @@ COPY ["oci8.pc","/opt/oracle/pkg-config/"]
 RUN \
     cd /opt/oracle && \
     ls *.zip | xargs -I {} unzip {} && \
-    rm -rf *.zip /opt/go.tar.gz && cd /opt/oracle/instantclient_12_2 && \
+    rm -rf *.zip && cd /opt/oracle/instantclient_12_2 && \
     ln -s libclntsh.so.12.1 libclntsh.so && ln -s libocci.so.12.1 libocci.so && \
     sh -c "echo /opt/oracle/instantclient_12_2 > /etc/ld.so.conf.d/oracle-instantclient.conf" && ldconfig
 
