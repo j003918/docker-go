@@ -5,7 +5,7 @@ ENV GLIBC_VER=2.27-r0
 RUN cp /etc/apk/repositories /etc/apk/repositories.bak && \
     echo "https://mirrors.aliyun.com/alpine/latest-stable/main" > /etc/apk/repositories && \
     echo "https://mirrors.aliyun.com/alpine/latest-stable/community" >> /etc/apk/repositories && \
-    apk add --no-cache --update-cache curl ca-certificates git unzip gcc libaio && \
+    apk add --no-cache --update-cache curl ca-certificates git unzip gcc libaio && cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     curl -Lo /etc/apk/keys/sgerrand.rsa.pub https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VER}/sgerrand.rsa.pub && \
     curl -Lo glibc-${GLIBC_VER}.apk  https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VER}/glibc-${GLIBC_VER}.apk && \
     curl -Lo glibc-bin-${GLIBC_VER}.apk  https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk && \
